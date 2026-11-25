@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cqo4jwbwl4c0i"]
+
+[ext_resource type="Texture2D" uid="uid://mnprfr7vp0db" path="res://model (2).png" id="1_na6m6"]
+[ext_resource type="PackedScene" uid="uid://dqaqc2owrx7fk" path="res://end_level.tscn" id="2_xcfcc"]
+[ext_resource type="PackedScene" uid="uid://c0x0erw0lxyxy" path="res://spike_down.tscn" id="3_c8stx"]
+[ext_resource type="PackedScene" uid="uid://dfo32bf75hmwo" path="res://spike_left.tscn" id="4_aqy51"]
+[ext_resource type="PackedScene" uid="uid://b0fs1j4sbh6xp" path="res://spike_right.tscn" id="5_s24i2"]
+[ext_resource type="PackedScene" uid="uid://dr1cm4gneodfm" path="res://spike_up.tscn" id="6_66w8i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("1_na6m6")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7mycd"]
+scenes/1/scene = ExtResource("2_xcfcc")
+scenes/2/scene = ExtResource("3_c8stx")
+scenes/3/scene = ExtResource("4_aqy51")
+scenes/4/scene = ExtResource("5_s24i2")
+scenes/5/scene = ExtResource("6_66w8i")
+
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+sources/1 = SubResource("TileSetScenesCollectionSource_7mycd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8stx"]
+font_size = 9
+
+[node name="level_2" type="TileMap" unique_id=1594607464]
+tile_set = SubResource("TileSet_lquwl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 393227, 0, 0, 327691, 0, 0, 262155, 0, 0, 131083, 0, 0, 65547, 0, 0, 393226, 0, 0, 393225, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 131072, 0, 0, 65536, 0, 0, 196619, 0, 0, 196608, 0, 0, 327690, 1, 196608, 262154, 1, 196608, 131082, 1, 196608, 65546, 1, 196608, 196618, 1, 65536)
+
+[node name="Label" type="Label" parent="." unique_id=1569754080]
+texture_filter = 2
+offset_left = 36.0
+offset_top = 15.0
+offset_right = 161.0
+offset_bottom = 60.0
+text = "If you press SHIFT, you can use ONE KEY as normal, but this is once per level."
+label_settings = SubResource("LabelSettings_c8stx")
+autowrap_mode = 3

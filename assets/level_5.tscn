@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c2adqc67n5eir"]
+
+[ext_resource type="Texture2D" uid="uid://mnprfr7vp0db" path="res://model (2).png" id="1_tac4s"]
+[ext_resource type="PackedScene" uid="uid://dqaqc2owrx7fk" path="res://end_level.tscn" id="2_qhsfq"]
+[ext_resource type="PackedScene" uid="uid://c0x0erw0lxyxy" path="res://spike_down.tscn" id="3_kcwpe"]
+[ext_resource type="PackedScene" uid="uid://dfo32bf75hmwo" path="res://spike_left.tscn" id="4_j6qfn"]
+[ext_resource type="PackedScene" uid="uid://b0fs1j4sbh6xp" path="res://spike_right.tscn" id="5_2etst"]
+[ext_resource type="PackedScene" uid="uid://dr1cm4gneodfm" path="res://spike_up.tscn" id="6_vw43l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("1_tac4s")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7mycd"]
+scenes/1/scene = ExtResource("2_qhsfq")
+scenes/2/scene = ExtResource("3_kcwpe")
+scenes/3/scene = ExtResource("4_j6qfn")
+scenes/4/scene = ExtResource("5_2etst")
+scenes/5/scene = ExtResource("6_vw43l")
+
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+sources/1 = SubResource("TileSetScenesCollectionSource_7mycd")
+
+[node name="level_2" type="TileMap" unique_id=1594607464]
+tile_set = SubResource("TileSet_lquwl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 393227, 0, 0, 327691, 0, 0, 262155, 0, 0, 131083, 0, 0, 65547, 0, 0, 393226, 0, 0, 393225, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 131072, 0, 0, 65536, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327684, 0, 0, 262148, 0, 0, 196612, 0, 0, 131076, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 262151, 0, 0, 196615, 0, 0, 131079, 0, 0, 65543, 0, 0, 196614, 0, 0, 196613, 0, 0, 196619, 1, 65536, -131058, 0, 0, -65522, 0, 0, 14, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 589822, 0, 0, -65538, 0, 0, -131059, 0, 0, 524301, 0, 0)

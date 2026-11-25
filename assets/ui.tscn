@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://b4y8hf560r3ar"]
+
+[ext_resource type="Script" uid="uid://bm2575v658njj" path="res://pause.gd" id="1_m6e0p"]
+[ext_resource type="Texture2D" uid="uid://ceg66ltgdcxym" path="res://texture (27).png" id="2_27fn8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
+font_size = 9
+
+[node name="ui" type="Control" unique_id=1501000277]
+layout_mode = 3
+anchor_left = -0.023000002
+anchor_top = -0.023000002
+anchor_right = 0.192
+anchor_bottom = 0.19000001
+offset_left = 0.4960022
+offset_top = -0.095998764
+offset_right = -0.18400574
+offset_bottom = -0.120010376
+script = ExtResource("1_m6e0p")
+
+[node name="keys" type="Label" parent="." unique_id=1611334235]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_lquwl")
+
+[node name="pause" type="Control" parent="." unique_id=1740063027]
+layout_mode = 1
+anchor_left = -0.023000002
+anchor_top = -0.022000002
+anchor_right = 0.98800004
+anchor_bottom = 1.0070001
+offset_left = 5.6810007
+offset_top = 4.0360003
+offset_right = -0.036010742
+offset_bottom = 0.033981323
+
+[node name="ColorRect" type="ColorRect" parent="pause" unique_id=1409026270]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.46666667)
+
+[node name="return" type="Button" parent="pause" unique_id=1767001363]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -25.5
+offset_right = 96.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "Return to game"
+
+[node name="tips" type="Button" parent="pause" unique_id=869216042]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -9.5
+offset_right = 96.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "Tips"
+
+[node name="quit" type="Button" parent="pause" unique_id=607574734]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = 6.5
+offset_right = 96.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "Quit Game"
+
+[node name="tipsmenu" type="Control" parent="pause" unique_id=1626233970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="pause/tipsmenu" unique_id=251007202]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 33.0
+offset_right = 217.0
+offset_bottom = 130.0
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[node name="tips" type="Control" parent="pause/tipsmenu" unique_id=1146378311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="pause/tipsmenu/tips" unique_id=2093646507]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 35.0
+offset_right = 402.0
+offset_bottom = 219.0
+scale = Vector2(0.5, 0.5)
+text = "basically its a puzzle game xD
+moving obsticles exist.
+also chris, one of our level designers, doesn't like you. specifically you."
+
+[node name="controls" type="Control" parent="pause/tipsmenu" unique_id=803265396]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="pause/tipsmenu/controls" unique_id=145362534]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 35.0
+offset_right = 402.0
+offset_bottom = 219.0
+scale = Vector2(0.5, 0.5)
+text = "WASD or Arrow Keys to move the player. 
+Hold shift to press a key and have it NOT STICK. this is once per level. this works until you let go of shift OR let go of the button."
+
+[node name="TabBar" type="TabBar" parent="pause/tipsmenu" unique_id=520194548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 14.0
+offset_right = 154.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+current_tab = 0
+tab_count = 2
+tab_0/title = "Tips"
+tab_1/title = "Controls"
+
+[node name="close" type="Button" parent="pause/tipsmenu" unique_id=357235012]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 28.0
+offset_right = 226.0
+offset_bottom = 59.0
+scale = Vector2(0.5, 0.5)
+text = "x"
+flat = true
+
+[node name="Button" type="Button" parent="." unique_id=852839724]
+texture_filter = 1
+layout_mode = 0
+offset_left = 215.00002
+offset_right = 255.00002
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("2_27fn8")
+flat = true
+
+[connection signal="button_down" from="pause/return" to="." method="_on_return_button_down"]
+[connection signal="button_down" from="pause/tips" to="." method="_on_tips_button_down"]
+[connection signal="button_down" from="pause/quit" to="." method="_on_quit_button_down"]
+[connection signal="tab_changed" from="pause/tipsmenu/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="button_down" from="pause/tipsmenu/close" to="." method="_on_close_button_down"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

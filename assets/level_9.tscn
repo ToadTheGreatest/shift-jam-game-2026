@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c5n0ob8wd5kd5"]
+
+[ext_resource type="Texture2D" uid="uid://mnprfr7vp0db" path="res://model (2).png" id="1_xx8ku"]
+[ext_resource type="PackedScene" uid="uid://dqaqc2owrx7fk" path="res://end_level.tscn" id="2_a721k"]
+[ext_resource type="PackedScene" uid="uid://c0x0erw0lxyxy" path="res://spike_down.tscn" id="3_7amt0"]
+[ext_resource type="PackedScene" uid="uid://dfo32bf75hmwo" path="res://spike_left.tscn" id="4_w5e11"]
+[ext_resource type="PackedScene" uid="uid://b0fs1j4sbh6xp" path="res://spike_right.tscn" id="5_e3b7f"]
+[ext_resource type="PackedScene" uid="uid://dr1cm4gneodfm" path="res://spike_up.tscn" id="6_aie2w"]
+[ext_resource type="Script" uid="uid://ddy58l7gkxwp3" path="res://moving_obsticle.gd" id="7_a721k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("1_xx8ku")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7mycd"]
+scenes/1/scene = ExtResource("2_a721k")
+scenes/2/scene = ExtResource("3_7amt0")
+scenes/3/scene = ExtResource("4_w5e11")
+scenes/4/scene = ExtResource("5_e3b7f")
+scenes/5/scene = ExtResource("6_aie2w")
+
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+sources/1 = SubResource("TileSetScenesCollectionSource_7mycd")
+
+[node name="level_2" type="TileMap" unique_id=1594607464]
+tile_set = SubResource("TileSet_lquwl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 393227, 0, 0, 393226, 0, 0, 393225, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 131072, 0, 0, 65536, 0, 0, 196608, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 196618, 1, 65536, 65546, 1, 131072, 65545, 1, 131072, 65544, 1, 131072, 65543, 1, 131072, 65542, 1, 131072, 65541, 1, 131072, 65540, 1, 131072, 65539, 1, 131072, 65538, 1, 131072, 327690, 1, 327680, 327689, 1, 327680, 327688, 1, 327680, 327687, 1, 327680, 327686, 1, 327680, 327685, 1, 327680, 327684, 1, 327680, 327683, 1, 327680, 327682, 1, 327680, 327681, 1, 327680)
+
+[node name="moving_obsticle" type="Node2D" parent="." unique_id=1675345020]
+position = Vector2(56, 24)
+script = ExtResource("7_a721k")
+start_position = Vector2i(56, 24)
+end_position = Vector2i(56, 88)
+step = 0.5
+pingpong = true
+
+[node name="spike" parent="moving_obsticle" unique_id=515493804 instance=ExtResource("4_w5e11")]
+position = Vector2(-8, 0)
+
+[node name="spike2" parent="moving_obsticle" unique_id=714857862 instance=ExtResource("5_e3b7f")]
+position = Vector2(8, 0)
+
+[node name="moving_obsticle2" type="Node2D" parent="." unique_id=613024385]
+position = Vector2(120, 24)
+script = ExtResource("7_a721k")
+start_position = Vector2i(120, 24)
+end_position = Vector2i(120, 88)
+progress = 50
+step = 0.5
+pingpong = true
+
+[node name="spike" parent="moving_obsticle2" unique_id=1580092828 instance=ExtResource("4_w5e11")]
+position = Vector2(-8, 0)
+
+[node name="spike2" parent="moving_obsticle2" unique_id=43674960 instance=ExtResource("5_e3b7f")]
+position = Vector2(8, 0)

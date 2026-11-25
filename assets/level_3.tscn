@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bsp7yo4t4casl"]
+
+[ext_resource type="Texture2D" uid="uid://mnprfr7vp0db" path="res://model (2).png" id="1_1fhj5"]
+[ext_resource type="PackedScene" uid="uid://dqaqc2owrx7fk" path="res://end_level.tscn" id="2_16pka"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("1_1fhj5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7mycd"]
+scenes/1/scene = ExtResource("2_16pka")
+
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+sources/1 = SubResource("TileSetScenesCollectionSource_7mycd")
+
+[node name="level_2" type="TileMap" unique_id=1594607464]
+tile_set = SubResource("TileSet_lquwl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 393227, 0, 0, 327691, 0, 0, 262155, 0, 0, 131083, 0, 0, 65547, 0, 0, 393226, 0, 0, 393225, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 131072, 0, 0, 65536, 0, 0, 196608, 0, 0, 196619, 0, 0, 65537, 65536, 0, 262145, 65536, 0, 327690, 65536, 0, 65546, 1, 65536)

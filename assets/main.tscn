@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cd102m03o1i1g"]
+
+[ext_resource type="Script" uid="uid://daidaw33vin22" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://mcqirdrbk0yw" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bh0p260p78mtp" path="res://texture (25).png" id="2_h2yge"]
+[ext_resource type="AudioStream" uid="uid://qxbg1vs1y1tk" path="res://6272637193551872.wav" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(14, 14)
+
+[node name="main" type="Node2D" unique_id=770041219]
+script = ExtResource("1_lquwl")
+
+[node name="levels" type="Node2D" parent="." unique_id=1640022632]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1391573797]
+position = Vector2(96, 55)
+zoom = Vector2(4.735, 4.735)
+
+[node name="playerspawner" type="Node2D" parent="." unique_id=609759729]
+position = Vector2(24, 24)
+
+[node name="player" type="CharacterBody2D" parent="playerspawner" unique_id=1893496185]
+script = ExtResource("2_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="playerspawner/player" unique_id=1837992614]
+texture_filter = 1
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerspawner/player" unique_id=471602507]
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Area2D" type="Area2D" parent="playerspawner/player" unique_id=1497726577]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerspawner/player/Area2D" unique_id=208302087]
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=517636674]
+follow_viewport_enabled = true
+
+[node name="title" type="Control" parent="CanvasLayer" unique_id=1746447883]
+layout_mode = 3
+anchor_left = -0.021000002
+anchor_top = -0.022000002
+anchor_right = 0.18900001
+anchor_bottom = 0.19100001
+offset_left = -2.8079987
+offset_top = -0.7439985
+offset_right = 0.27198792
+offset_bottom = 1.231987
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/title" unique_id=145674131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49019608)
+
+[node name="playbutton" type="Button" parent="CanvasLayer/title" unique_id=1884281066]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = 0.5
+offset_right = 48.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY GAME"
+
+[node name="Label" type="Label" parent="CanvasLayer/title" unique_id=822049864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -56.5
+offset_right = 98.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "WELCOME TO THE STICKY
+KEYS GAME!"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2086263818]
+stream = ExtResource("4_1bvp3")
+autoplay = true
+
+[connection signal="area_entered" from="playerspawner/player/Area2D" to="playerspawner/player" method="_on_area_2d_area_entered"]
+[connection signal="button_down" from="CanvasLayer/title/playbutton" to="." method="_on_playbutton_button_down"]

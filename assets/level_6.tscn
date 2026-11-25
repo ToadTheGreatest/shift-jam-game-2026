@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dgobifrxsrveb"]
+
+[ext_resource type="Texture2D" uid="uid://mnprfr7vp0db" path="res://model (2).png" id="1_mix47"]
+[ext_resource type="PackedScene" uid="uid://dqaqc2owrx7fk" path="res://end_level.tscn" id="2_ixf42"]
+[ext_resource type="PackedScene" uid="uid://c0x0erw0lxyxy" path="res://spike_down.tscn" id="3_brkdw"]
+[ext_resource type="PackedScene" uid="uid://dfo32bf75hmwo" path="res://spike_left.tscn" id="4_soim0"]
+[ext_resource type="PackedScene" uid="uid://b0fs1j4sbh6xp" path="res://spike_right.tscn" id="5_vp58d"]
+[ext_resource type="PackedScene" uid="uid://dr1cm4gneodfm" path="res://spike_up.tscn" id="6_3eqwd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("1_mix47")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7mycd"]
+scenes/1/scene = ExtResource("2_ixf42")
+scenes/2/scene = ExtResource("3_brkdw")
+scenes/3/scene = ExtResource("4_soim0")
+scenes/4/scene = ExtResource("5_vp58d")
+scenes/5/scene = ExtResource("6_3eqwd")
+
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+sources/1 = SubResource("TileSetScenesCollectionSource_7mycd")
+
+[node name="level_2" type="TileMap" unique_id=1594607464]
+tile_set = SubResource("TileSet_lquwl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 393227, 0, 0, 393226, 0, 0, 393225, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 131072, 0, 0, 65536, 0, 0, 196608, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 65538, 0, 0, 131074, 0, 0, 262146, 0, 0, 327682, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 131078, 0, 0, 65542, 0, 0, 262150, 0, 0, 327686, 0, 0, 196616, 0, 0, 131080, 0, 0, 65544, 0, 0, 65545, 1, 65536)
